@@ -1,0 +1,7 @@
+phases:
+  install:
+    commands:
+      - npm install -g rimraf
+  pre_build:
+    commands:
+      - npm install
