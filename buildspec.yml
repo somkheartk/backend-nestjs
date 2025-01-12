@@ -1,7 +1,22 @@
+version: 0.2
 phases:
   install:
+    runtime-versions:
+      nodejs: 18 # or your preferred Node.js version
     commands:
-      - npm install -g rimraf
+      - echo Installing dependencies...
+      - npm install
   pre_build:
     commands:
-      - npm install
+      - echo Running pre-build steps...
+  build:
+    commands:
+      - echo Building the project...
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed successfully.
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
